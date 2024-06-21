@@ -180,3 +180,21 @@
 > range(x)
 [1] 1 8
 ```
+## Practice 3
+```
+# function: diff()
+# case: mileages
+> diff(mileage)
+[1] 313 284 311 280 322 324 302
+> mean(mileage)
+[1] 66371.75
+> max(diff(mileage))
+[1] 324
+> mean(diff(mileage))
+[1] 305.1429
+> min(diff(mileage))
+[1] 280
+> help("diff")
+# Lagged Differences
+# Returns suitably lagged and iterated differences.
+```
