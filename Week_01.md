@@ -8,7 +8,9 @@
 | multi-dimensional | Array | List |
 
 #### Vector
+A vector is an ordered/indexede sequence of values that can be of a single type:
 > logical; integer; double(numeric); character; complex; raw
+Individual elements of a vector are accessed using an **index**.
 
 ```
 > a <- c(1,5,2,43,4,78,9,10,9,9)
@@ -213,3 +215,5 @@
 > (sum(bill>40)/12)*100
 [1] 41.66667
 ```
+#### Matrix
+A matrix can be cosidered as an extension of the vector structure with additional dimensional attributes(rows and columns). A matrix is a collection of vectors of a single type.
