@@ -1,13 +1,13 @@
 # Week 01
 ## Lecture 1
-**Data structure:**
+### Data structure:
 | Dimension | Homogeneous | Heterogeneous |
 |-----------|--------------|------------- |
 | one-dimensional | Atomic Vector | List |
 | two-dimensional | Matrix | Data Frame |
 | multi-dimensional | Array | List |
 
-**Vector**
+#### Vector
 > logical; integer; double(numeric); character; complex; raw
 
 ```
