@@ -54,4 +54,15 @@
 [1] 5 5 2
 > a[2:5]
 [1]  5  2 43  4
+
+> # logical operation
+> a
+ [1]  5  5  2 43  4 78  9 10  9  9
+> a==5
+ [1]  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[10] FALSE
+> which(a==5)
+[1] 1 2
+> sum(a==5)
+[1] 2
 ```
