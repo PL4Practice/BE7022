@@ -31,4 +31,23 @@
 # modulo: get remainder of a division
 > a%%2 
  [1] 1 1 0 1 0 0 1 0 1 1
+
+# INDEXING
+> a
+ [1]  1  5  2 43  4 78  9 10  9  9
+> # change the first value
+> a[1]=5
+> a
+ [1]  5  5  2 43  4 78  9 10  9  9
+> a
+ [1]  5  5  2 43  4 78  9 10  9  9
+> # get the 5th element of a
+> a[5]
+[1] 4
+> # get a without 2nd element
+> a[-2]
+[1]  5  2 43  4 78  9 10  9  9
+> # get the first 3 elements of a
+> a[c(1,2,3)]
+[1] 5 5 2
 ```
