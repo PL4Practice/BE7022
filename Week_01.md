@@ -198,3 +198,18 @@
 # Lagged Differences
 # Returns suitably lagged and iterated differences.
 ```
+## Practice 4
+```
+> # case: cell phone bill
+> bill = c(46, 33, 39, 37, 46, 30, 48, 32, 49, 35, 30, 48)
+> sum(bill)
+[1] 473
+> min(bill)
+[1] 30
+> max(bill)
+[1] 49
+> sum(bill>40)
+[1] 5
+> (sum(bill>40)/12)*100
+[1] 41.66667
+```
