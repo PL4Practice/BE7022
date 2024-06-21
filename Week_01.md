@@ -114,7 +114,7 @@
 [1] 199999991 199999993 199999995 199999997 199999999
 [6] 200000001
 ```
-## Practice 1
+##### Practice 1
 ```
 > x = c(seq(1,99,2), seq(2,100,2))
 > x
@@ -159,7 +159,7 @@
 > max(x)
 [1] 100
 ```
-## Practice 2
+##### Practice 2
 ```
 > # create a variable
 > x = c(1,8,2,6,3,8,5,5,5,5)
@@ -180,7 +180,7 @@
 > range(x)
 [1] 1 8
 ```
-## Practice 3
+##### Practice 3
 ```
 # function: diff()
 # case: mileages
@@ -198,7 +198,7 @@
 # Lagged Differences
 # Returns suitably lagged and iterated differences.
 ```
-## Practice 4
+##### Practice 4
 ```
 > # case: cell phone bill
 > bill = c(46, 33, 39, 37, 46, 30, 48, 32, 49, 35, 30, 48)
