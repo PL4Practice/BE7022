@@ -258,3 +258,9 @@ A matrix can be cosidered as an extension of the vector structure with additiona
 [2,] FALSE  TRUE FALSE
 [3,] FALSE FALSE  TRUE
 ```
+**How to get help on R commands?**
+```
+> ?matrix
+# or
+> help('matrix')
+```
