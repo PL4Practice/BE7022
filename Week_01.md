@@ -236,4 +236,25 @@ A matrix can be cosidered as an extension of the vector structure with additiona
 [2,]    3    4
 [3,]    5    6
 [4,]    7    8
+
+> x = matrix(1:9,nrow=3)
+> x
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+> dim(x)
+[1] 3 3
+
+> y = matrix(1:9, nrow=3, byrow=TRUE)
+> y
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+> x==y
+      [,1]  [,2]  [,3]
+[1,]  TRUE FALSE FALSE
+[2,] FALSE  TRUE FALSE
+[3,] FALSE FALSE  TRUE
 ```
