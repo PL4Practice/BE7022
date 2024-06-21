@@ -65,4 +65,22 @@
 [1] 1 2
 > sum(a==5)
 [1] 2
+
+> # create a vector ...
+> b = 1:10
+> b
+ [1]  1  2  3  4  5  6  7  8  9 10
+> # create a vector with 10 2's
+> c = rep(2,10)
+> c
+ [1] 2 2 2 2 2 2 2 2 2 2
+> # create a vector with elements 2,4,6,8,10
+> d = seq(2,10,2)
+> d
+[1]  2  4  6  8 10
+> # create a vector by a combination of available vectors
+> e = c(b,c)
+> e
+ [1]  1  2  3  4  5  6  7  8  9 10  2  2  2  2  2  2  2  2
+[19]  2  2
 ```
