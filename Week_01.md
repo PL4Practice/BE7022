@@ -217,3 +217,23 @@ Individual elements of a vector are accessed using an **index**.
 ```
 #### Matrix
 A matrix can be cosidered as an extension of the vector structure with additional dimensional attributes(rows and columns). A matrix is a collection of vectors of a single type.
+```
+> # Matrix Operation
+> matrix(ncol=3,nrow=3)
+     [,1] [,2] [,3]
+[1,]   NA   NA   NA
+[2,]   NA   NA   NA
+[3,]   NA   NA   NA
+> matrix(1:8,ncol=2)
+     [,1] [,2]
+[1,]    1    5
+[2,]    2    6
+[3,]    3    7
+[4,]    4    8
+> matrix(1:8,ncol=2,byrow=TRUE)
+     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+[3,]    5    6
+[4,]    7    8
+```
