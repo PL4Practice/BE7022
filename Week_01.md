@@ -218,7 +218,7 @@ Individual elements of a vector are accessed using an **index**.
 #### Matrix
 A matrix can be cosidered as an extension of the vector structure with additional dimensional attributes(rows and columns). A matrix is a collection of vectors of a single type.
 ```
-> # Matrix Operation
+> # Matrix Operations 01
 > matrix(ncol=3,nrow=3)
      [,1] [,2] [,3]
 [1,]   NA   NA   NA
