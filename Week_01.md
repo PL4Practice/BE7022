@@ -505,3 +505,59 @@ Warning in install.packages :
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   22.09   22.22   22.46   22.72   23.14   24.03 
 ```
+### Factor
+```
+> # Logical checks and for loops
+> # Create a new variable: height_group
+> # Value "Ht_Grp_gt60" when height > 60
+> # Value "Ht_Grp_le60" when height <= 60
+
+> dim(women)
+[1] 15  3
+
+> # Option 1
+> for (i in (1:15))
++ {
++ if(women$height[i]>60)
++  {
++     women$height_group[i] = "Ht_Grp_gt60"
++  }
++ else if (women$height[i] <= 60)
++  {
++     women$height_group[i] = "Ht_Grp_le60"
++  }
++ }
+
+> women$height_group_factor = factor(women$height_group)
+> table(women$height_group_factor)
+
+Ht_Grp_gt60 Ht_Grp_le60 
+         12           3 
+```
+The character variable height_group can be used to create a new variable height_group_factor with a special data structure called **factor** and with **level**s 'Ht_Grp_le60' and ‘Ht_Grp_gt60'. Factors will come in handy when specific statitical tests are used.
+
+Factors can also be labeled, ordered and recoded.
+```
+> # Case: dataset ToothGrowth
+> data("ToothGrowth")
+> dim(ToothGrowth)
+[1] 60  3
+> head(ToothGrowth)
+   len supp dose
+1  4.2   VC  0.5
+2 11.5   VC  0.5
+3  7.3   VC  0.5
+4  5.8   VC  0.5
+5  6.4   VC  0.5
+6 10.0   VC  0.5
+> tail(ToothGrowth)
+    len supp dose
+55 24.8   OJ    2
+56 30.9   OJ    2
+57 26.4   OJ    2
+58 27.3   OJ    2
+59 29.4   OJ    2
+60 23.0   OJ    2
+> # orange juice coded OJ; ascorbic acid coded as VC
+```
+Suppose here are 3 files: <ToothGrowth.txt>, <ToothGrowth.csv>, <ToothGrowth.xlsx>
