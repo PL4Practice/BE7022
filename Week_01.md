@@ -620,7 +620,7 @@ Suppose here are 3 files: <ToothGrowth.txt>, <ToothGrowth.csv>, <ToothGrowth.xls
  Mean   :18.81                      Mean   :1.167  
  3rd Qu.:25.27                      3rd Qu.:2.000  
  Max.   :33.90                      Max.   :2.000
-
+- txt file
 > # Convert the character variable supp into a factor so summary function can summarize it
 > TG_txt$supp = factor(TG_txt$supp)
 > summary(TG_txt)
@@ -632,6 +632,7 @@ Suppose here are 3 files: <ToothGrowth.txt>, <ToothGrowth.csv>, <ToothGrowth.xls
  3rd Qu.:25.27           3rd Qu.:2.000  
  Max.   :33.90           Max.   :2.000 
 ```
-Q: What is the difference bwtween the character and the factor?
+*Q: What is the difference bwtween the character and the factor?*
 > Use character if your data is just strings that do not hold specific meaning; use factor if it's a categorical variable with a limited set of values. The main advantages of using factors are: you get an error if you try to give a new value that is not in the levels (so that can save you from typos)
-> In R, a factor is a data type that is used to represent categorical data, while a character data type is used to represent text data.
+
+> In R, a factor is a data type that is used to represent **categorical** data, while a character data type is used to represent text data.
