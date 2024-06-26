@@ -616,7 +616,8 @@ Factors can also be labeled, ordered and recoded.
 ---
 Suppose here are 3 files: <ToothGrowth.txt>, <ToothGrowth.csv>, <ToothGrowth.xlsx>
 ### Data import and export
-TXT file:
+1. Import
+**TXT file:**
 ```
 > TG_txt = read.table(file="/Users/Pearl/BE7022/Week1_L1/ToothGrowth.txt", header=TRUE)
 > summary(TG_txt)
@@ -627,6 +628,11 @@ TXT file:
  Mean   :18.81                      Mean   :1.167  
  3rd Qu.:25.27                      3rd Qu.:2.000  
  Max.   :33.90                      Max.   :2.000
+# The summary function can't summary the character variable, let's use the table function:
+> table(TG_txt$supp)
+
+OJ VC 
+30 30 
 
 > # Convert the character variable supp into a factor so summary function can summarize it
 > TG_txt$supp = factor(TG_txt$supp)
@@ -643,3 +649,128 @@ TXT file:
 > Use character if your data is just strings that do not hold specific meaning; use factor if it's a categorical variable with a limited set of values. The main advantages of using factors are: you get an error if you try to give a new value that is not in the levels (so that can save you from typos)
 
 > In R, a factor is a data type that is used to represent **categorical** data, while a character data type is used to represent text data.
+
+**CSV file:**
+```
+> TG_csv = read.csv(file="/Users/Pearl/BE7022/Week1_L1/ToothGrowth.csv", header=TRUE)
+> dim(TG_csv)
+[1] 60  3
+> head(TG_csv)
+   len supp dose
+1  4.2   VC  0.5
+2 11.5   VC  0.5
+3  7.3   VC  0.5
+4  5.8   VC  0.5
+5  6.4   VC  0.5
+6 10.0   VC  0.5
+
+```
+**XLSX file:**
+```
+> # install.packages("openxlsx")
+> library('openxlsx')
+> TG_xlsx = read.xlsx("/Users/Pearl/BE7022/Week1_L1/ToothGrowth.xlsx", sheet=1, colNames=TRUE) # This file just has one sheet.
+> dim(TG_xlsx)
+[1] 60  3
+> head(TG_xlsx)
+   len supp dose
+1  4.2   VC  0.5
+2 11.5   VC  0.5
+3  7.3   VC  0.5
+4  5.8   VC  0.5
+5  6.4   VC  0.5
+6 10.0   VC  0.5
+
+# Sort
+> TG_sort1 = TG_xlsx[order(TG_xlsx$len),]
+> TG_sort2 = TG_xlsx[order(-TG_xlsx$len),]
+> head(TG_sort1)
+   len supp dose
+1  4.2   VC  0.5
+9  5.2   VC  0.5
+4  5.8   VC  0.5
+5  6.4   VC  0.5
+10 7.0   VC  0.5
+3  7.3   VC  0.5
+> head(TG_sort2)
+    len supp dose
+23 33.9   VC    2
+26 32.5   VC    2
+56 30.9   OJ    2
+30 29.5   VC    2
+59 29.4   OJ    2
+50 27.3   OJ    1
+> TG_sort3 = TG_xlsx[order(TG_xlsx$len, TG_xlsx$dose),]
+> TG_sort4 = TG_xlsx[order(TG_xlsx$len, -TG_xlsx$dose),]
+> head(TG_sort3)
+   len supp dose
+1  4.2   VC  0.5
+9  5.2   VC  0.5
+4  5.8   VC  0.5
+5  6.4   VC  0.5
+10 7.0   VC  0.5
+3  7.3   VC  0.5
+> head(TG_sort4)
+   len supp dose
+1  4.2   VC  0.5
+9  5.2   VC  0.5
+4  5.8   VC  0.5
+5  6.4   VC  0.5
+10 7.0   VC  0.5
+3  7.3   VC  0.5
+
+# Subsets:
+> # Create subsets of columns and/or rows
+> TG_subset1 = subset(TG_xlsx, select=c(len, dose))
+> TG_subset2 = subset(TG_xlsx, select=c(len, dose), subset=(dose>0.5))
+> TG_subset3 = subset(TG_xlsx, select=c(len, supp, dose), subset=(dose>0.5 & supp=="OJ"))
+> head(TG_subset1)
+   len dose
+1  4.2  0.5
+2 11.5  0.5
+3  7.3  0.5
+4  5.8  0.5
+5  6.4  0.5
+6 10.0  0.5
+> head(TG_subset2)
+    len dose
+11 16.5    1
+12 16.5    1
+13 15.2    1
+14 17.3    1
+15 22.5    1
+16 17.3    1
+> head(TG_subset3)
+    len supp dose
+41 19.7   OJ    1
+42 23.3   OJ    1
+43 23.6   OJ    1
+44 26.4   OJ    1
+45 20.0   OJ    1
+46 25.2   OJ    1
+```
+2. Export
+```
+> head(TG_subset1)
+   len dose
+1  4.2  0.5
+2 11.5  0.5
+3  7.3  0.5
+4  5.8  0.5
+5  6.4  0.5
+6 10.0  0.5
+> dim(TG_subset1)
+[1] 60  2
+> str(TG_subset1)
+'data.frame':	60 obs. of  2 variables:
+ $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+ $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+> # A data frame can be export to a .txt file using write.table function.
+> write.table(TG_subset1, file="/Users/Pearl/BE7022/Week1_L1/TG_subset1.txt", col.names=TRUE, row.names=FALSE, quote=FALSE)
+# row.names=FALSE prevents writing the data frame's row numbers as a column in output .txt file
+# quote=FALSE prevents surrounding of any character or factor columns by double quotes
+
+> write.xlsx(TG_subset3, file="/Users/Pearl/BE7022/Week1_L1/TG_subset3.xlsx", sheetNames="Sheet1", colNames=TRUE, rowNames=FALSE)
+# need pkg 'openxlsx'
+
+```
