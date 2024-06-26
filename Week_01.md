@@ -532,8 +532,39 @@ Warning in install.packages :
 > table(women$height_group_factor)
 
 Ht_Grp_gt60 Ht_Grp_le60 
-         12           3 
+         12           3
 ```
+Other options:
+```
+# Option 2:
+for (i in (1:15))
+{
+  if (women[i,1] > 60) 
+  {
+    women[i,'height_group'] = "Ht_Grp_gt60"
+  }
+  else if (women[i,1] <= 60) 
+  {
+    women[i,'height_group'] = "Ht_Grp_le60"
+  }
+}
+
+# Option 3:
+for (i in (1:15))
+{
+  if (women[i,'height'] > 60) 
+  {
+    women[i,'height_group'] = "Ht_Grp_gt60"
+  }
+  else if (women[i,'height'] <= 60) 
+  {
+    women[i,'height_group'] = "Ht_Grp_le60"
+  }
+}
+
+
+```
+
 The character variable height_group can be used to create a new variable height_group_factor with a special data structure called **factor** and with **level**s 'Ht_Grp_le60' and ‘Ht_Grp_gt60'. Factors will come in handy when specific statitical tests are used.
 
 Factors can also be labeled, ordered and recoded.
