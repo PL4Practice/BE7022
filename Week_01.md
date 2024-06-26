@@ -264,3 +264,74 @@ A matrix can be cosidered as an extension of the vector structure with additiona
 # or
 > help('matrix')
 ```
+Other matrix operations:
+```
+> x = matrix(1:9, nrow=3)
+> x
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+> dim(x)
+[1] 3 3
+> y = matrix(1:9, nrow=3, byrow=TRUE)
+> y
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+> dim(y)
+[1] 3 3
+> x==y
+      [,1]  [,2]  [,3]
+[1,]  TRUE FALSE FALSE
+[2,] FALSE  TRUE FALSE
+[3,] FALSE FALSE  TRUE
+
+> x+y
+     [,1] [,2] [,3]
+[1,]    2    6   10
+[2,]    6   10   14
+[3,]   10   14   18
+> x-y
+     [,1] [,2] [,3]
+[1,]    0    2    4
+[2,]   -2    0    2
+[3,]   -4   -2    0
+> 2*x + 2*y
+     [,1] [,2] [,3]
+[1,]    4   12   20
+[2,]   12   20   28
+[3,]   20   28   36
+> # Transpose a matrix
+> t(x)
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+> x
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+
+> # Name the rows and columns of a matrix
+> dimnames(x) = list(c("r1", "r2", "r3"), c("c1", "c2", "c3"))
+> x = matrix(1:9, nrow=3, dimnames=list(c("r1", "r2", "r3"), c("c1", "c2", "c3")))
+> x
+   c1 c2 c3
+r1  1  4  7
+r2  2  5  8
+r3  3  6  9
+> dimnames(x)
+[[1]]
+[1] "r1" "r2" "r3"
+
+[[2]]
+[1] "c1" "c2" "c3"
+
+> colnames(x)
+[1] "c1" "c2" "c3"
+> rownames(x)
+[1] "r1" "r2" "r3"
+```
