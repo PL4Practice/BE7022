@@ -422,3 +422,10 @@ $c
 > list2[["a"]]
 [1] 2 2 2
 ```
+### R Packages
+```
+> install.packages('datasets')
+Warning in install.packages :
+  package ‘datasets’ is a base package, and should not be updated   # R studio
+> library(datasets)
+```
