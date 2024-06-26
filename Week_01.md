@@ -215,6 +215,7 @@ Individual elements of a vector are accessed using an **index**.
 > (sum(bill>40)/12)*100
 [1] 41.66667
 ```
+---
 #### Matrix
 A matrix can be cosidered as an extension of the vector structure with additional dimensional attributes(rows and columns). A matrix is a collection of vectors of a single type.
 ```
@@ -610,6 +611,7 @@ Factors can also be labeled, ordered and recoded.
 ```
 Suppose here are 3 files: <ToothGrowth.txt>, <ToothGrowth.csv>, <ToothGrowth.xlsx>
 ### Data import and export
+TXT file:
 ```
 > TG_txt = read.table(file="/Users/Pearl/BE7022/Week1_L1/ToothGrowth.txt", header=TRUE)
 > summary(TG_txt)
@@ -620,7 +622,7 @@ Suppose here are 3 files: <ToothGrowth.txt>, <ToothGrowth.csv>, <ToothGrowth.xls
  Mean   :18.81                      Mean   :1.167  
  3rd Qu.:25.27                      3rd Qu.:2.000  
  Max.   :33.90                      Max.   :2.000
-- txt file
+
 > # Convert the character variable supp into a factor so summary function can summarize it
 > TG_txt$supp = factor(TG_txt$supp)
 > summary(TG_txt)
