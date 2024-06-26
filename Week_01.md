@@ -391,3 +391,34 @@ Dinesh          95          1.74             m
 Clinton         72          1.91             m
 
 ```
+#### List
+A list can be a collection of objects of different types. Each elements of a list is an object and can be any type such as vector, data frame, etc..
+
+To create a list:
+```
+> # Create a list:
+> list1 = list(a=1:5, b=c("Apple", "Pear", "Grape"))
+> list1
+$a
+[1] 1 2 3 4 5
+
+$b
+[1] "Apple" "Pear"  "Grape"
+
+> list2 = list(a=rep(2,3), b=1:6, c=c("Cat", "Dog", "Sheep", "Fish"))
+> list2
+$a
+[1] 2 2 2
+
+$b
+[1] 1 2 3 4 5 6
+
+$c
+[1] "Cat"   "Dog"   "Sheep" "Fish"
+
+> # Access list elements
+> list1$"a"
+[1] 1 2 3 4 5
+> list2[["a"]]
+[1] 2 2 2
+```
