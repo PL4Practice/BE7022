@@ -533,6 +533,23 @@ Warning in install.packages :
 
 Ht_Grp_gt60 Ht_Grp_le60 
          12           3
+> women
+   height weight      BMI height_group height_group_factor
+1      58    115 24.03240  Ht_Grp_le60         Ht_Grp_le60
+2      59    117 23.62856  Ht_Grp_le60         Ht_Grp_le60
+3      60    120 23.43333  Ht_Grp_le60         Ht_Grp_le60
+4      61    123 23.23811  Ht_Grp_gt60         Ht_Grp_gt60
+5      62    126 23.04318  Ht_Grp_gt60         Ht_Grp_gt60
+6      63    129 22.84883  Ht_Grp_gt60         Ht_Grp_gt60
+7      64    132 22.65527  Ht_Grp_gt60         Ht_Grp_gt60
+8      65    135 22.46272  Ht_Grp_gt60         Ht_Grp_gt60
+9      66    139 22.43274  Ht_Grp_gt60         Ht_Grp_gt60
+10     67    142 22.23791  Ht_Grp_gt60         Ht_Grp_gt60
+11     68    146 22.19680  Ht_Grp_gt60         Ht_Grp_gt60
+12     69    150 22.14871  Ht_Grp_gt60         Ht_Grp_gt60
+13     70    154 22.09429  Ht_Grp_gt60         Ht_Grp_gt60
+14     71    159 22.17358  Ht_Grp_gt60         Ht_Grp_gt60
+15     72    164 22.23997  Ht_Grp_gt60         Ht_Grp_gt60
 ```
 Other options:
 ```
@@ -592,3 +609,15 @@ Factors can also be labeled, ordered and recoded.
 > # orange juice coded OJ; ascorbic acid coded as VC
 ```
 Suppose here are 3 files: <ToothGrowth.txt>, <ToothGrowth.csv>, <ToothGrowth.xlsx>
+#### Data import and export
+```
+> TG_txt = read.table(file="/Users/Pearl/BE7022/Week1_L1/ToothGrowth.txt", header=TRUE)
+> summary(TG_txt)
+      len            supp                dose      
+ Min.   : 4.20   Length:60          Min.   :0.500  
+ 1st Qu.:13.07   Class :character   1st Qu.:0.500  
+ Median :19.25   Mode  :character   Median :1.000  
+ Mean   :18.81                      Mean   :1.167  
+ 3rd Qu.:25.27                      3rd Qu.:2.000  
+ Max.   :33.90                      Max.   :2.000  
+```
