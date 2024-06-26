@@ -334,4 +334,60 @@ r3  3  6  9
 [1] "c1" "c2" "c3"
 > rownames(x)
 [1] "r1" "r2" "r3"
+
+> # Add new columns and rows to matrix
+> x2 = cbind(x, c(10,11,12))
+> dim(x2)
+[1] 3 4
+> x3 = rbind(x, c(13,14,15))
+> dim(x3)
+[1] 4 3
+> x2
+   c1 c2 c3   
+r1  1  4  7 10
+r2  2  5  8 11
+r3  3  6  9 12
+> x3
+   c1 c2 c3
+r1  1  4  7
+r2  2  5  8
+r3  3  6  9
+   13 14 15
+```
+#### Data frame
+A data frame can be a collection of vectors of different types. Usually the data is stored in a tabular form, with rows for different person and columns for differenr variables. 
+To create a data frame:
+```
+> height = c(1.75, 1.80, 1.65, 1.90, 1.74, 1.91)
+> weight = c(60, 72, 57, 90, 95, 72)
+> gender = c('f', 'f', 'f', 'm', 'm', 'm')
+> df1 = data.frame(weight, height, gender)
+> df1
+  weight height gender
+1     60   1.75      f
+2     72   1.80      f
+3     57   1.65      f
+4     90   1.90      m
+5     95   1.74      m
+6     72   1.91      m
+> dim(df1)
+[1] 6 3
+> str(df1)
+'data.frame':	6 obs. of  3 variables:
+ $ weight: num  60 72 57 90 95 72
+ $ height: num  1.75 1.8 1.65 1.9 1.74 1.91
+ $ gender: chr  "f" "f" "f" "m" ...
+
+> # Name the rows and columns of a data frame
+> rownames(df1) = c("Mike", "Kavya", "Shun", "John", "Dinesh", "Clinton")
+> colnames(df1) = c("weight_kgs", "height_meters", "gender_binary")
+> df1
+        weight_kgs height_meters gender_binary
+Mike            60          1.75             f
+Kavya           72          1.80             f
+Shun            57          1.65             f
+John            90          1.90             m
+Dinesh          95          1.74             m
+Clinton         72          1.91             m
+
 ```
