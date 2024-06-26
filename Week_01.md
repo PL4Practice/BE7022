@@ -355,6 +355,7 @@ r2  2  5  8
 r3  3  6  9
    13 14 15
 ```
+---
 #### Data frame
 A data frame can be a collection of vectors of different types. Usually the data is stored in a tabular form, with rows for different person and columns for differenr variables. 
 To create a data frame:
@@ -392,6 +393,7 @@ Dinesh          95          1.74             m
 Clinton         72          1.91             m
 
 ```
+---
 #### List
 A list can be a collection of objects of different types. Each elements of a list is an object and can be any type such as vector, data frame, etc..
 
@@ -423,6 +425,7 @@ $c
 > list2[["a"]]
 [1] 2 2 2
 ```
+---
 ### R Packages
 ```
 > install.packages('datasets')
@@ -506,6 +509,7 @@ Warning in install.packages :
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   22.09   22.22   22.46   22.72   23.14   24.03 
 ```
+---
 ### Factor
 ```
 > # Logical checks and for loops
@@ -609,6 +613,7 @@ Factors can also be labeled, ordered and recoded.
 60 23.0   OJ    2
 > # orange juice coded OJ; ascorbic acid coded as VC
 ```
+---
 Suppose here are 3 files: <ToothGrowth.txt>, <ToothGrowth.csv>, <ToothGrowth.xlsx>
 ### Data import and export
 TXT file:
