@@ -428,4 +428,80 @@ $c
 Warning in install.packages :
   package ‘datasets’ is a base package, and should not be updated   # R studio
 > library(datasets)
+
+# E.G.: "women" dataset
+> data("women")
+> str(women)
+'data.frame':	15 obs. of  2 variables:
+ $ height: num  58 59 60 61 62 63 64 65 66 67 ...
+ $ weight: num  115 117 120 123 126 129 132 135 139 142 ...
+> # str() function: compactly displaying the internal structure of a R object
+> dim(women)
+[1] 15  2
+> head(women)
+  height weight
+1     58    115
+2     59    117
+3     60    120
+4     61    123
+5     62    126
+6     63    129
+> head(women, n=10)
+   height weight
+1      58    115
+2      59    117
+3      60    120
+4      61    123
+5      62    126
+6      63    129
+7      64    132
+8      65    135
+9      66    139
+10     67    142
+> tail(women, n=10)
+   height weight
+6      63    129
+7      64    132
+8      65    135
+9      66    139
+10     67    142
+11     68    146
+12     69    150
+13     70    154
+14     71    159
+15     72    164
+> force(women)
+   height weight
+1      58    115
+2      59    117
+3      60    120
+4      61    123
+5      62    126
+6      63    129
+7      64    132
+8      65    135
+9      66    139
+10     67    142
+11     68    146
+12     69    150
+13     70    154
+14     71    159
+15     72    164
+> table(women$height)
+
+58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 
+ 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
+# 1: appear once
+> summary((women$weight))
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  115.0   124.5   135.0   136.7   148.0   164.0 
+> summary(women$weight)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  115.0   124.5   135.0   136.7   148.0   164.0
+
+> # Calculate the body mass index(BMI)
+> women$BMI = (women$weight/women$height**2)*703
+> summary(women$BMI)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  22.09   22.22   22.46   22.72   23.14   24.03 
 ```
