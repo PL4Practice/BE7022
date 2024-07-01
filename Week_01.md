@@ -769,6 +769,7 @@ OJ VC
 > write.table(TG_subset1, file="/Users/Pearl/BE7022/Week1_L1/TG_subset1.txt", col.names=TRUE, row.names=FALSE, quote=FALSE)
 # row.names=FALSE prevents writing the data frame's row numbers as a column in output .txt file
 # quote=FALSE prevents surrounding of any character or factor columns by double quotes
+# wirte.csv
 
 > write.xlsx(TG_subset3, file="/Users/Pearl/BE7022/Week1_L1/TG_subset3.xlsx", sheetNames="Sheet1", colNames=TRUE, rowNames=FALSE)
 # need pkg 'openxlsx'
