@@ -775,3 +775,18 @@ OJ VC
 # need pkg 'openxlsx'
 
 ```
+---
+## Lecture 2
+Typically, a statistical study proceeds as follows:
+1. Have a hypothesis about a phenomenon.
+2. Collect data about the phenomenon.
+3. Process or analyze the data in order to increase our understanding of the phenomenon under focus.
+4. Check whether the data are consistent with the hypothesis.
+
+**Key words:**
+- Retrospective study
+- Prospective study
+  
+- Longitudinal study (e.g. Framingham Heart Study)
+  
+
