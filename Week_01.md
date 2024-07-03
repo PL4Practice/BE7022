@@ -801,3 +801,21 @@ Typically, a statistical study proceeds as follows:
    > with gaps or interruptions
 2. Continuous variable (or Quantitive variable; numeric)
    > no gaps or interruption
+
+**Type of Studies**
+
+- Observational Study:
+> An observational study collects data as it exists. No intentional interference is allowed.
+<ins>Experimental Study</ins>
+> An experimental study is one in which the investigator deliberately changes the circumstances of each subject ine the study in order to influence the outcome.
+> E.G.: Does taking half of an aspirin tablet three times a week prevents heart attack. 
+Conduct an experiment?
+> > Conduct an experiment:
+> > 1. Identify the target population;
+> > 2. Select a sample;
+> > 3. Treatment/ Control (randomized, sham/placebo ...)
+> > 4. Double-blind studies
+> > 5. Follow the for 10 years, say.
+> > 6. Collect the revelant data.
+
+
