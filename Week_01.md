@@ -822,10 +822,12 @@ Conduct an experiment?
 
 ---
 **SOME TERMINOLOGY**
-Cohort; Prospective study; Retrospective study; Baseline characteristics; Case control study; 
 
-Baseline Characteristics are values recorded at the time of entry into the study./n
-A Case Control Study is one in which the cases have the disease under focus and controls are a comparative group of not having the disease. !/n
+Cohort; Prospective study; Retrospective study; Baseline characteristics; Case control study; Matched Case Control Study; Cross-Sectional Study; Placebo; Single-blind study...
+
+> - Baseline Characteristics are values recorded at the time of entry into the study.
+> - A Case Control Study is one in which the cases have the disease under focus and controls are a comparative group of not having the disease.
+> - A Cross-Sectional Study is one in which information on a variable is collected at one fixed time.
 
 
 
