@@ -788,5 +788,16 @@ Typically, a statistical study proceeds as follows:
 - Prospective study
   
 - Longitudinal study (e.g. Framingham Heart Study)
-  
 
+**Type of statistic**
+1. Descriptive Statistics
+2. Inferential Statistics
+> - population measurements
+> - population mean(μ) (the average)
+> - Using sample data, guessing or making statements about the parameters of the population is called *Statistical Inference*.
+  
+**Type of Variables**
+1. Categorical variable (or Discrete variable, Qualitatve variable, Nominal variable)
+   > with gaps or interruptions
+2. Continuous variable (or Quantitive variable; numeric)
+   > no gaps or interruption
