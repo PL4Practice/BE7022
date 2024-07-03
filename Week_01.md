@@ -804,9 +804,10 @@ Typically, a statistical study proceeds as follows:
 
 **Type of Studies**
 
-- Observational Study:
+1. Observational Study
 > An observational study collects data as it exists. No intentional interference is allowed.
-<ins>Experimental Study</ins>
+
+2. Experimental Study
 > An experimental study is one in which the investigator deliberately changes the circumstances of each subject ine the study in order to influence the outcome.
 > E.G.: Does taking half of an aspirin tablet three times a week prevents heart attack. 
 Conduct an experiment?
@@ -817,5 +818,14 @@ Conduct an experiment?
 > > 4. Double-blind studies
 > > 5. Follow the for 10 years, say.
 > > 6. Collect the revelant data.
+*Key words:* Clinical trials, laboratory experimental study, comparative experiment, experimental unit, cross-over experiment
+
+---
+**SOME TERMINOLOGY**
+Cohort; Prospective study; Retrospective study; Baseline characteristics; Case control study; 
+
+Baseline Characteristics are values recorded at the time of entry into the study./n
+A Case Control Study is one in which the cases have the disease under focus and controls are a comparative group of not having the disease. !/n
+
 
 
