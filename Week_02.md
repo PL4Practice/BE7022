@@ -356,4 +356,26 @@ dead - other specific non-ca          dead - prostatic ca
 > # Play with options in pie() to customize and add details to the pie charts.
 > pie(table(Prostate$rx_f), main="Pie chart of rx_f", col="blue")
 > pie(table(Prostate$rx_f), main="Pie chart of rx_f", col=rainbow(length(levels(Prostate$rx_f))))
-![image](https://github.com/PL4Practice/BE7022/assets/173494332/673b8135-e08d-4fda-97bb-4462ecf1ed8f)
+
+ > # Obtain pie charts of rx_f with %.
+> rx_f_levels = c(levels(Prostate$rx_f))
+> rx_f_percents = c(round(table(Prostate$rx_f)/nrow(Prostate)*100,1))
+> rx_labels_f = c("", "", "", "")
+> for (i in (1: length(levels(Prostate$rx_f))))
++ {
++     rx_labels_f[i] = paste(c(rx_f_levels[i], ";", rx_f_percents[i], "%"),
++ collapse=" ")
++ }
+> pie(table(Prostate$rx_f), main="Pie chart of rx_f with %", col=rainbow(length(levels(Prostate$rx_f))), labels=rx_labels_f)
+```
+**Bar plot**
+```
+> barplot(table(Prostate$rx_f), cex.names=0.75, las=2)
+> barplot(table(Prostate$status_f), cex.names=0.75, las=2)
+
+> # Customize and add details to the bar plots.
+> barplot(table(Prostate$rx_f), cex.names=0.75, las=2, main="Bar plot of rx_f", xlab="rx_f", ylab="frequency", ylim=c(0,200), col="blue")
+> barplot(table(Prostate$status_f), cex.names=0.75, las=2, main="Bar plot of status_f", xlab="status_f", ylab="frequency", ylim=c(0,200), col="green")
+
+
+```
