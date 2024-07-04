@@ -325,3 +325,35 @@ Data summarization using **graphical methods**: Graphical analysis of **Prostate
   - Correlogram
   - Scatter plot
 ---
+```
+> library(openxlsx)
+> Prostate = read.xlsx("/Users/Pearl/BE7022/Week2/Prostate.xlsx", sheet=1, colNames=TRUE)
+> Prostate$rx_f = factor(Prostate$rx)
+> Prostate$status_f = factor(Prostate$status)
+> # Obtain frequency tables (counts) of rx_f and status_f.
+> table(Prostate$rx_f)
+
+0.2 mg estrogen 1.0 mg estrogen 5.0 mg estrogen         placebo 
+            124             126             125             127 
+> table(Prostate$status_f)
+
+                       alive       dead - cerebrovascular 
+                         148                           31 
+    dead - heart or vascular              dead - other ca 
+                          96                           25 
+dead - other specific non-ca          dead - prostatic ca 
+                          28                          130 
+    dead - pulmonary embolus   dead - respiratory disease 
+                          14                           16 
+        dead - unknown cause    dead - unspecified non-ca 
+                           7                            7
+```
+**Pie chart**
+```
+> # The pie() function can be used on the output of the table() to get pie charts.
+> pie(table(Prostate$rx_f))
+> pie(table(Prostate$status_f))
+> # Play with options in pie() to customize and add details to the pie charts.
+> pie(table(Prostate$rx_f), main="Pie chart of rx_f", col="blue")
+> pie(table(Prostate$rx_f), main="Pie chart of rx_f", col=rainbow(length(levels(Prostate$rx_f))))
+![image](https://github.com/PL4Practice/BE7022/assets/173494332/673b8135-e08d-4fda-97bb-4462ecf1ed8f)
