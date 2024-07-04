@@ -1,6 +1,6 @@
 # Week 02
 ## Lecture 03
-Data summarization using tabular methods (descriptive statistics)
+Data summarization using **tabular methods** (descriptive statistics): Tabular analysis of **Prostate.xlsx* data.
 > **Recap**:
 > 
 > *Type of statistics*
@@ -274,3 +274,54 @@ Lastly, let's look at the correlations between the continuous variables age, wt,
 
 The 'cor()' function can be used to calculate the correlation matrix of a dataframe or a numeric matrix.
 ```
+> # Create a subset dataframe with only the continuous variables of interest.
+> Prostate_ContinuousVars = subset(Prostate, select=c(age, wt, sbp, dbp, hg, sz, sg))
+> # Obtain the Pearson and Spearman correlation matrices using cor() function with 'complete.obs' option to remove rows with missing data for any of the continuous variables selected.
+> ?cor
+> cor_pearson = cor(Prostate_ContinuousVars, method=c("pearson"), use="complete.obs")
+> cor_spearman = cor(Prostate_ContinuousVars, method=c("spearman"), use="complete.obs")
+> # Use the round() function on the output of the cor() function to round the result to 2 decimal places.
+> round(cor_pearson, 2)
+      age    wt   sbp   dbp    hg    sz    sg
+age  1.00 -0.06  0.10 -0.07 -0.09  0.01 -0.06
+wt  -0.06  1.00  0.21  0.23  0.26 -0.05 -0.09
+sbp  0.10  0.21  1.00  0.63  0.06  0.05 -0.03
+dbp -0.07  0.23  0.63  1.00  0.15 -0.04 -0.07
+hg  -0.09  0.26  0.06  0.15  1.00 -0.13 -0.14
+sz   0.01 -0.05  0.05 -0.04 -0.13  1.00  0.38
+sg  -0.06 -0.09 -0.03 -0.07 -0.14  0.38  1.00
+> round(cor_spearman, 2)
+      age    wt   sbp   dbp    hg    sz    sg
+age  1.00 -0.03  0.07 -0.10 -0.13 -0.03 -0.03
+wt  -0.03  1.00  0.19  0.21  0.26 -0.01 -0.08
+sbp  0.07  0.19  1.00  0.57  0.07  0.07 -0.03
+dbp -0.10  0.21  0.57  1.00  0.16 -0.01 -0.05
+hg  -0.13  0.26  0.07  0.16  1.00 -0.14 -0.12
+sz  -0.03 -0.01  0.07 -0.01 -0.14  1.00  0.36
+sg  -0.03 -0.08 -0.03 -0.05 -0.12  0.36  1.00
+```
+---
+## Lecture 4&5 
+Data summarization using **graphical methods**: Graphical analysis of **Prostate.xlsx* data.
+> with functions: 'tapply()', 'bystats()', 'par()', 'plot()', 'pairs()', and 'ggplot()'
+
+**Graphical methods on categorical variables:**
+- Single categorical variable can be graphically presented using:
+  - Pie chart
+  - Bar chart (vertical or horizontal)
+  
+- Two categorical variable can be graphically presented using:
+  - Clustered bar plot
+    > levels of the 2nd variable are clustered/split within levels of the first variable
+    > can be vertical or horizontal
+
+**Graphical methods on continuous variables:**
+- Single continuous variable can be graphically presented using:
+  - Box-and-Whisker plot or Box plot
+    > A box plot does not identify multimodal data, which involve 2 distinct central locations.  Histograms are better suited to identify multimodality in a variable.
+  - Histogram(touching bars)
+  
+- Two continuous variable can be graphically presented using:
+  - Correlogram
+  - Scatter plot
+---
