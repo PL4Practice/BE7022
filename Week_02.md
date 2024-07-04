@@ -72,5 +72,205 @@ Distribution:
     - "+ve" value: a increasing relationship; strong when close to 1.
     - *Pearson correlation coefficient*: parametric, value-based
     - *Spearman correlation coeffient*: nonparametric, rank-based
- 
-  
+---
+CASE: Tabular analysis of Prostate.xlsx
+```
+
+> # Import the data into R
+> library('openxlsx')
+> # Examine structure and dimension of data
+> str(Prostate)
+'data.frame':	502 obs. of  18 variables:
+ $ patno : num  1 2 3 4 5 6 7 8 9 10 ...
+ $ stage : num  3 3 3 3 3 3 3 3 3 3 ...
+ $ rx    : chr  "0.2 mg estrogen" "0.2 mg estrogen" "5.0 mg estrogen" "0.2 mg estrogen" ...
+ $ dtime : num  72 1 40 20 65 24 46 62 61 60 ...
+ $ status: chr  "alive" "dead - other ca" "dead - cerebrovascular" "dead - cerebrovascular" ...
+ $ age   : num  75 54 69 75 67 71 75 73 60 78 ...
+ $ wt    : num  76 116 102 94 99 98 100 114 110 107 ...
+ $ pf    : chr  "normal activity" "normal activity" "normal activity" "in bed < 50% daytime" ...
+ $ hx    : num  0 0 1 1 0 0 0 1 0 1 ...
+ $ sbp   : num  15 13 14 14 17 19 14 17 12 13 ...
+ $ dbp   : num  9 7 8 7 10 10 10 11 8 8 ...
+ $ ekg   : chr  "heart strain" "heart block or conduction def" "heart strain" "benign" ...
+ $ hg    : num  13.8 14.6 13.4 17.6 13.4 ...
+ $ sz    : num  2 42 3 4 34 10 13 3 4 21 ...
+ $ sg    : num  8 NA 9 8 8 11 9 9 10 6 ...
+ $ ap    : num  0.3 0.7 0.3 0.9 0.5 ...
+ $ bm    : num  0 0 0 0 0 0 0 0 0 0 ...
+ $ sdate : num  2778 2820 2933 2999 3002 ...
+> dim(Prostate)
+[1] 502  18
+```
+Let's summarizing the **categorical variables** *rx* and status. 
+> rx: treatment ( placebo, 0.2/1.0/5.0 mg estrogen)
+```
+> # create factor variabble rx_f and status_f from the charactor variables rx and status
+> Prostate$rx_f = factor(Prostate$rx)
+> Prostate$status_f = factor(Prostate$status)
+> # Obtain frequency tables(counts) of rx_f and status_f
+> table(Prostate$rx_f)
+
+0.2 mg estrogen 1.0 mg estrogen 5.0 mg estrogen         placebo 
+            124             126             125             127 
+> table(Prostate$status_f)
+
+                       alive       dead - cerebrovascular 
+                         148                           31 
+    dead - heart or vascular              dead - other ca 
+                          96                           25 
+dead - other specific non-ca          dead - prostatic ca 
+                          28                          130 
+    dead - pulmonary embolus   dead - respiratory disease 
+                          14                           16 
+        dead - unknown cause    dead - unspecified non-ca 
+                           7                            7
+> prop.table(table(Prostate$rx_f))
+
+0.2 mg estrogen 1.0 mg estrogen 5.0 mg estrogen         placebo 
+       0.247012        0.250996        0.249004        0.252988 
+> prop.table(table(Prostate$status_f))
+
+                       alive       dead - cerebrovascular 
+                  0.29482072                   0.06175299 
+    dead - heart or vascular              dead - other ca 
+                  0.19123506                   0.04980080 
+dead - other specific non-ca          dead - prostatic ca 
+                  0.05577689                   0.25896414 
+    dead - pulmonary embolus   dead - respiratory disease 
+                  0.02788845                   0.03187251 
+        dead - unknown cause    dead - unspecified non-ca 
+                  0.01394422                   0.01394422
+```
+```
+# Create the character variable 'died' from the character variable 'status'
+> for (i in (1:502))
++ { if (Prostate$status[i] == "alive")
++     {
++         Prostate$died[i] = "No"
++     }
++     else
++     {
++         Prostate$died[i] = "Yes"
++     }
++ }
+
+> # Create the factor variable died_f from the character variable died
+> Prostate$died_f = factor(Prostate$died)
+> # Obtain cross-tabulation (with counts) of rx_f and died_f ('rx', treatment)
+> table(Prostate$rx_f, Prostate$died_f)
+                 
+                  No Yes
+  0.2 mg estrogen 29  95
+  1.0 mg estrogen 55  71
+  5.0 mg estrogen 32  93
+  placebo         32  95
+
+> # Obtain cross-tabulation (with cell proportions) of rx_f and died_f
+> # "Cell proportions" in the context of a cross-tabulation or contingency table refer to the relative frequencies of each cell in the table compared to the total number of observations.
+> prop.table(table(Prostate$rx_f, Prostate$died_f))
+                 
+                          No        Yes
+  0.2 mg estrogen 0.05776892 0.18924303
+  1.0 mg estrogen 0.10956175 0.14143426
+  5.0 mg estrogen 0.06374502 0.18525896
+  placebo         0.06374502 0.18924303
+
+> # Obtain relative frequency tables (with row proportions) of rx_f and died_f.
+> prop.table(table(Prostate$rx_f, Prostate$died_f), 1)
+                 
+                         No       Yes
+  0.2 mg estrogen 0.2338710 0.7661290
+  1.0 mg estrogen 0.4365079 0.5634921
+  5.0 mg estrogen 0.2560000 0.7440000
+  placebo         0.2519685 0.7480315
+# "Row proportions" in the context of a cross-tabulation or contingency table refer to the relative frequencies of each cell within a row, compared to the total number of observations in that row.
+> # Obtain relative frequency tables (with column  proportions) of rx_f and died_f.
+> prop.table(table(Prostate$rx_f, Prostate$died_f), 2)
+                 
+                         No       Yes
+  0.2 mg estrogen 0.1959459 0.2683616
+  1.0 mg estrogen 0.3716216 0.2005650
+  5.0 mg estrogen 0.2162162 0.2627119
+  placebo         0.2162162 0.2683616
+> ?prop.table
+> prop.table(table(Prostate$rx_f, Prostate$died_f), margin = 2)
+                 
+                         No       Yes
+  0.2 mg estrogen 0.1959459 0.2683616
+  1.0 mg estrogen 0.3716216 0.2005650
+  5.0 mg estrogen 0.2162162 0.2627119
+  placebo         0.2162162 0.2683616
+```
+Next, let's consider summarizing the **continuous variables**: age, wt, sbp, dbp, hg, sz, and sg.
+```
+> summary(Prostate$age)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  48.00   70.00   73.00   71.46   76.00   89.00       1 
+> summary(Prostate$wt)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  69.00   90.00   98.00   99.03  107.00  152.00       2 
+> summary(Prostate$sbp)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   8.00   13.00   14.00   14.35   16.00   30.00 
+> summary(Prostate$dbp)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  4.000   7.000   8.000   8.149   9.000  18.000 
+> summary(Prostate$hg)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  5.899  12.299  13.699  13.446  14.699  21.199 
+> summary(Prostate$sz)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.00    5.00   11.00   14.63   21.00   69.00       5 
+> summary(Prostate$sg)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   5.00    9.00   10.00   10.31   11.00   15.00      11 
+```
+The summary() function did not ptovide the mode, variance...
+```
+> # Using the pkg 'Hmisc'
+> install.packages('Hmisc')
+> library('Hmisc')
+> help("describe", package = 'Hmisc')
+> describe(Prostate$age)
+Prostate$age 
+       n  missing distinct     Info     Mean      Gmd      .05      .10      .25 
+     501        1       41    0.996    71.46    7.497       56       60       70 
+     .50      .75      .90      .95 
+      73       76       78       80 
+
+lowest : 48 49 50 51 52, highest: 84 85 87 88 89
+# This did not provide the mode, variance and standard deviation measures too.
+# Try ‘bystats’ in ‘Hmisc‘
+> help("bystats", package = 'Hmisc')
+> bystats(Prostate$age)
+Error in interaction(..., drop = TRUE, sep = " ") : No factors specified
+> bystats(Prostate$age, 0)
+
+ Mean of Prostate$age by  
+
+      N Missing     Mean
+0   501       1 71.45709
+ALL 501       1 71.45709
+# Technically, the bystats() functions provides statistics on a single continuous variable by levels of a factor. However, you can try tricking it with the value 0 instead of a factor.
+
+# Customized
+> bystats(Prostate$age, 0, fun=function(x) c(Mean=mean(x), Median=median(x), Mode=mode(x), SD=sd(x), quantile(x)))
+
+ c(1, 30, 1, 111, 30, 111, 1, 1) of Prostate$age by 0 
+
+    N     Missing Mean               Median Mode      SD                0%  
+0   "501" "1"     "71.4570858283433" "73"   "numeric" "7.0812890557171" "48"
+ALL "501" "1"     "71.4570858283433" "73"   "numeric" "7.0812890557171" "48"
+    25%  50%  75%  100%
+0   "70" "73" "76" "89"
+ALL "70" "73" "76" "89"
+Warning message:
+In formals(fun) : argument is not a function
+# same as othe variables
+
+```
+Lastly, let's look at the correlations between the continuous variables age, wt, sbp, dbp, hg, sz, and sg.
+
+The 'cor()' function can be used to calculate the correlation matrix of a dataframe or a numeric matrix.
+```
