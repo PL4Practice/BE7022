@@ -51,4 +51,8 @@ On spaces which are continuum, probability models are specified in the form of a
   
   = Proportion of tablets with weights between 730 and 735.
 
+  ### Binomial Distribution
+  (Most common discrete distribution)
+  
+
 
