@@ -257,14 +257,22 @@ The function *pnorm()* calculates the probabilities associated with a normal cur
 > 1 - pnorm(900, mean=750, sd=60, lower.tail=TRUE)
 [1] 0.006209665
 ```
+*Example*: X~N(1076.80, 105.76)
 ```
-> # Example: X~N(1076.80, 105.76)
 > # To calculate Pr(X<=800)
 > pnorm(800, mean=1076.80, sd=105.76, lower.tail=TRUE)
 [1] 0.004432114
 > # To calculate Pr(X<=1300)
 > pnorm(1300, mean=1076.80, sd=105.76, lower.tail=TRUE)
 [1] 0.9825897
-
+```
+*Example*: X~N(1520.0, 100.70)
+```
+> # To calculate Pr(X<=800)
+> pnorm(800, mean=1520, sd=100.70, lower.tail=TRUE)
+[1] 4.340465e-13
+> # To calculate Pr(X<=1300)
+> pnorm(1300, mean=1520, sd=100.70, lower.tail=TRUE)
+[1] 0.01445517
 ```
 
