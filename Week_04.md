@@ -156,16 +156,19 @@ Each point in one sample is matched to a unique point in the other sample.
 Notations in 2 samples:
 
 Population parameters 
-| Size | Mean | SD |
-|---|---|---|
+|   | Size | Mean | SD |
+|---|---|---|---|
 | Group 1 | N1 | µ1 | σ1 |
 | Group 2	| N1 | µ2 | σ2 |
 
 Sample statistics
-| Size | Mean | SD |
-|---|---|---|
+|    |Size | Mean | SD |
+|---|---|---|---|
 | Group 1 |	n1 | x ̅_1 |	s1 | 
 | Group 2	| n2 | x ̅_2	| s2 |
+
+Test/inferences on (µ1 – µ2) using difference of means = $$\[\bar{x_1} - \bar{x_2}\]$$
+Standard error of difference of means quantifies how precisely $$\[\bar{x_1} - \bar{x_2}\]$$ estimates $$\[\bar{\mu_1} - \bar{\mu_2}\]$$
 
 - Test conditions
 
@@ -178,8 +181,13 @@ Sample statistics
 #### 2-sample z-test ($$\[{\sigma_1}\]$$ and $$\[{\sigma_2}\]$$ are known and equal (=$$\[{\sigma_p}\]$$)
 
 #### 2-sample Student's t-test($$\[{\sigma_1}\]$$ and $$\[{\sigma_2}\]$$ are known and equal (=$$\[{\sigma_p}\]$$)
- 
- 
+
+
+---
+## Lecture 12
+Examples of tests on 1-sample, paired-smaple and 2-sample means + and Confidence Intervals
+### 1-sample z-test ($$\[{\sigma}\]$$ is known)
+
  
 
   
