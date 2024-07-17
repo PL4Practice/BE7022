@@ -103,10 +103,13 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
 - Test procedure
   * A. Formulate $$\[H_O: \mu = {\mu_0}\]$$ versus $$\( H_a: \mu \neq \mu_0 \)$$ ( <>)
   * B. Choose significance level α (ussually 0.05 or 0.01)
-  * C. Test statistic $$\[mathcal{Zsat} = \frac{{\bar{x}-{\mu_0}{\frac{\sigma}{\sqrt{n}} \sim \mathcal{N}(0,1)
-  * 
-
+  * C. Test statistic $$\[ \mathcal{Z}_{\text{sat}} = \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{N}(0, 1) \]$$
+  * D. (Calculate *p*-value using R)
+  * E. Reject $$\[H_O\]$$ if *p*-value < α
 - Confidence interval
+  A (1-α)100% confidence interval for μ is calculated as $$\[
+\bar{x} \pm z_{(1-\alpha/2)} \frac{\sigma}{\sqrt{n}}\]$$ where the critical value $$\(z_{(1-\alpha/2)}\)$$ satisfies the criteria $$\[
+Pr(Z \leq z_{(1-\alpha/2)}) = (1-\alpha/2) \quad \text{for} \quad Z \sim \mathcal{N}(0,1).\]$$
   
 
 #### 1-sample t-test ($$\[{\sigma}\]$$ is unknown)
