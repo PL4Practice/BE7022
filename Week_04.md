@@ -187,9 +187,9 @@ Standard error of difference of means quantifies how precisely $$\[\bar{x_1} - \
 ## Lecture 12
 Examples of tests on 1-sample, paired-smaple and 2-sample means + and Confidence Intervals
 ### 1-sample z-test ($$\[{\sigma}\]$$ is known)
-
+Example 1
 ```
-> # Example 
+> # Example 1
 > # Weschler Adult Intelligence Scores are Normal with mu = 100 and sigma = 15
 > # Take an SRS of n = 9
 > # Measure scores: {116, 128, 125, 119, 89, 99, 105, 116, 118}
@@ -282,6 +282,37 @@ Call user-defined onsample.ztest() function.
 
 [[4]]
 [1] "pvalue_greater = 0.0053"
+
+> mean(Scores)
+[1] 112.7778
+# onesamole.ztest(112.7778, 200, 15, 9)
+# Reject the null hypothesis as the one-sided p-value = 0.0053 < alpha = 0.05.  Conclude that the mean adult intelligence score is > 100.
+```
+Example 2
+In the 1970s, 20–29 year old men in the U.S. had a mean body weight μ of 170 pounds. Standard deviation σ = 40 pounds. We want to test whether mean body weight in the population now differs.
+- Take an SRS of n = 64
+- Let sample mean = 173
+- Does this sample mean provide statistically reliable evidence that population mean body weight of 20–29 year old men in the U.S. has changed since the 1970s? 
+
+```
+> # Example 2
+> # Current body weight: X~(mu,40), mu(unknown)
+> # Distribution of X is unknown
+> # n = 64(>=30), Normality requirement of x_bar is satisfied
+> # H0: mu =170 versus Ha:mu no equal 170
+> onesample.ztest(x_bar = 173, mu_0 = 170, sigma = 40, n = 64)
+[[1]]
+[1] "one.z.stat = 0.6"
+
+[[2]]
+[1] "pvalue_twosided = 0.5485"
+
+[[3]]
+[1] "pvalue_less = 0.7257"
+
+[[4]]
+[1] "pvalue_greater = 0.2743"
+# Do not reject null hyothesis as the two-sided p-value = 0.5485 > alpha = 0.005. Insufficient evidence to conclude that current mean body weight is not equal 170. Mean body weight of 20–29 year old men in the U.S. has not changed since the 1970s. 
 ```
 
  
