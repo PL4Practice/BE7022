@@ -268,7 +268,21 @@ onesample.ztest = function(x_bar, mu_0, sigma, n){
   return(output)
 }
 ```
+Call user-defined onsample.ztest() function.
+```
+> onesample.ztest(x_bar=x_bar, mu_0=mu_0, sigma=sigma, n=n)
+[[1]]
+[1] "one.z.stat = 2.5556"
 
+[[2]]
+[1] "pvalue_twosided = 0.0106"
+
+[[3]]
+[1] "pvalue_less = 0.9947"
+
+[[4]]
+[1] "pvalue_greater = 0.0053"
+```
 
  
 
