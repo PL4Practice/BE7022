@@ -128,12 +128,14 @@ Pr(Z \leq z_{(1-\alpha/2)}) = (1-\alpha/2) \]$$ for $$\[Z \sim \mathcal{N}(0,1)\
 
 
 #### Paired-sample z-test ($$\[{\sigma_d}\]$$ is known)
-
-- Test conditions
-  Each point in one sample is matched to a unique point in the other sample.
+Each point in one sample is matched to a unique point in the other sample.
   > Example: Pre- and post-intervention values, different time points
   > 
   > Xd,i = X1,i – X2,i
+
+- Test conditions
+  * Continuous variable $$\[X_{d,i}\]$$, simple random sample, σ is unknown (estimated using $${s_d}$$)
+  * X is approximately Normal (any *n*) or n >= 30 from any distribution
 
 
 
