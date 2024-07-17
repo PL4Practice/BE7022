@@ -188,6 +188,76 @@ Standard error of difference of means quantifies how precisely $$\[\bar{x_1} - \
 Examples of tests on 1-sample, paired-smaple and 2-sample means + and Confidence Intervals
 ### 1-sample z-test ($$\[{\sigma}\]$$ is known)
 
+```
+> # Example 
+> # Weschler Adult Intelligence Scores are Normal with mu = 100 and sigma = 15
+> # Take an SRS of n = 9
+> # Measure scores: {116, 128, 125, 119, 89, 99, 105, 116, 118}
+> # Does this sample mean provide statistically reliable evidence that population mean μ is > than 100? 
+> # Intelligence score: X ~ N(μ = 100, sigma = 15)
+> # X ~ N.  Normality requirement of x ̅ is satisfied.
+> # H0: μ = 100 versus Ha: μ > 100
+
+> Scores = c(116, 128, 125, 119, 89, 99, 105, 116, 118)
+> alpha = 0.05
+> x_bar = mean(Scores)
+> mu_0 = 100
+> sigma = 15
+> n = length(Scores)
+```
+1-sample z-test is not available in base R. Let's build an user-defined function for it.
+#### Create R function
+```
+# Create R function
+
+# Basic functions
+my_function <- function() { # create a function with the name my_function
+  print("test my function")
+}
+
+# Call a function
+my_function() # call the function named my_function
+
+
+# Nested Functions
+Nested_function <- function(x, y) {
+  a <- x + y
+  return(a)
+}
+Nested_function(Nested_function(2,2), Nested_function(3,3))
+
+## a function within a function:
+Outer_func <- function(x) {
+  Inner_func <- function(y) {
+    a <- x + y
+    return(a)
+  }
+  return (Inner_func)
+}
+output <- Outer_func(3) # To call the Outer_func
+output(5)
+
+## R Function Recursion
+tri_recursion <- function(k) {
+  if (k > 0) {
+    result <- k + tri_recursion(k - 1)
+    print(result)
+  } else {
+    result = 0
+    return(result)
+  }
+}
+tri_recursion(6)
+```
+
+
+
+
+
+
+
+```
+
  
 
   
