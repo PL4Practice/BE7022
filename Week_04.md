@@ -56,8 +56,7 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
     - b. Calculate test statistic (based on null hypothesis value forparameter.)
     - c. Calculate *p*-value for the test statistic.
     - d. Reject null hypothesis if *p*-value <= significance level. Retain null hypothesis if *p* value > significance level.
-
-
+  > While hypothesis testing is applicable to many parameters (involving different distributions and populations), this illustrative description focuses on testing the population mean µ using information from a single sample.
 
   
 
