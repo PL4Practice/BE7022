@@ -74,6 +74,11 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
   <ins>Test statistic<ins/>:
   - The z statistic for one-sample problems about means.
     $$\[\mathcal{Z_stat} = \frac{\bar{x} - {\mu_0}}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{N}(0,1)\]$$
+
+  <ins>*p*-value<ins/>:
+  
+
+    
   
 
 
