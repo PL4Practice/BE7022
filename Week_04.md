@@ -63,6 +63,20 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
      - The alternative hypothesis ($$\[H_a\]$$: a claim of "difference".
        * One-sided alternatives ($$\[H_a:\mu > {\mu_0}\]$$, $$\[H_a:\mu < {\mu_0}\]$$)
        * Two-sided alternatives ($$\[H_a:\mu \neq {\mu_0}\]$$)
+
+  <ins>Significance level (α)<ins/>:
+  - Let α represent the probability of erroneously rejecting $$\[H_0\]$$.
+  - Set α threshold of acceptable error (e.g., α = 0.10 or α = 0.05, or whatever level is acceptable).
+  - α = 0.05 is most common.
+    > Rigorous tests involve α = 0.01 while lenient tests involve α = 0.10
+
+
+  <ins>Test statistic<ins/>:
+  - The z statistic for one-sample problems about means.
+    $$\[\mathcal{Z_stat} = \frac{\bar{x} - {\mu_0}}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{N}(0,1)\]$$
   
+
+
+    
   
 
