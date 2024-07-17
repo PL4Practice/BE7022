@@ -28,10 +28,15 @@ Consider a random variable with population mean *μ* and std.dev *σ*, the follo
 | Test σ | ? |
 
 Let x1, x2, … , xn denote a sample of n observations drawn from the population.  The statistics of this sample include the following:
-- sample mean
-$$\[\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i\]
+
+- sample mean: $$\[\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i\]$$
+
+- sample variance: $$\[s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2\]$$
+  
+- sample standard deviation: $$\[s = \sqrt{s^2}\]$$
+
+When X is Normal or for a large sample (n >= 30) from any distribution, $$\[\bar{x} \sim \mathcal{N}(\mu, SE_\bar{x}\]$$
 
 
-- sample variance 		s^2=∑_(i=1)^n▒〖〖(x_i-x ̅)〗^2/(n-1)〗 
-- sample standard deviation 	s=√(s^2 )
+  
 
