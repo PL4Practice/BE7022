@@ -249,14 +249,26 @@ tri_recursion <- function(k) {
 }
 tri_recursion(6)
 ```
-
-
-
-
-
-
-
+In this case:
 ```
+# Create onesample.ztest function
+onesample.ztest = function(x_bar, mu_0, sigma, n){
+  one.z.stat = (x_bar - mu_0) / (sigma/sqrt(n))
+  
+  pvalue_twosided = 2 * pnorm(-abs(one.z.stat), mean=0, sd=1, lower.tail=TRUE)
+  pvalue_less = pnorm(one.z.stat, mean=0, sd=1, lower.tail=TRUE)
+  pvalue_greater = 1 - pnorm(one.z.stat, mean=0, sd=1, lower.tail=TRUE) 
+  
+  output = list (
+    paste("one.z.stat =", round(one.z.stat, 4)),
+    paste("pvalue_twosided =", round(pvalue_twosided, 4)),
+    paste("pvalue_less =", round(pvalue_less, 4)),
+    paste("pvalue_greater =", round(pvalue_greater, 4))
+  )
+  return(output)
+}
+```
+
 
  
 
