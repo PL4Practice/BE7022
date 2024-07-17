@@ -40,8 +40,22 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
 
 
 <ins> Sample types for testing/inferences on means<ins/>
-a) 1-sample: One group; no concurrent control group, comparisons made to external population
-b) Paired-sampe: Two samples with each data point in one sample uniquely matched to a point in the other; 
+
+- a) 1-sample: One group; no concurrent control group, comparisons made to external population.
+  > i.e. Measure vutamin content in loaves of bread and see if the average meets national standards
+- b) Paired-sampe: Two samples with each data point in one sample uniquely matched to a point in the other; (consider as a single smaple of - paired differences and analyze within-pair differences)
+  > i.e. Compare vitamin content of bread loaves immediately after baking versus vitamin content in the same loaves 3 days later.
+- c) 2-sample： Two independent/separate groups; no matching or pairing; compare separate groups. (A single sample can be grouped by 2 levels of a variable and the resulting 2 groups will be considered as two independent samples.)
+  > i.e. Compare vitamin content of bread immediately after baking versus other loaves that have been on shelf for 3 days
+
+  ### Hypothesis Testing
+  *Hypothesis testing* is also called *significance testing*. The objective of hypothesis testing is to test claims about parameters.
+
+  STEPS:
+    - a. State null and alternative hypotheses and fig significance level. [NULL hypothesis: $$\[H_0\]$$, alternative hypotheses: $$[H_1\]$$]
+    - b. Calculate test statistic (based on null hypothesis value forparameter.)
+    - c. Calculate *p*-value for the test statistic.
+    - d. Reject null hypothesis if *p*-value <= significance level. Retain null hypothesis if *p* value > significance level.
 
 
 
