@@ -52,7 +52,7 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
   *Hypothesis testing* is also called *significance testing*. The objective of hypothesis testing is to test claims about parameters.
 
   STEPS:
-    - a. State null and alternative hypotheses and fig significance level. [NULL hypothesis: $$\[H_0\]$$, alternative hypotheses: $$[H_1\]$$]
+    - a. State null and alternative hypotheses and fig significance level. [NULL hypothesis: $$\[H_0\]$$, alternative hypotheses: $$[H_1\]$$
     - b. Calculate test statistic (based on null hypothesis value forparameter.)
     - c. Calculate *p*-value for the test statistic.
     - d. Reject null hypothesis if *p*-value <= significance level. Retain null hypothesis if *p* value > significance level.
