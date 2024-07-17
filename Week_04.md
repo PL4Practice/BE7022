@@ -109,8 +109,8 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
 - Confidence interval
   A (1-α)100% confidence interval for μ is calculated as $$\[
 \bar{x} \pm z_{(1-\alpha/2)} \frac{\sigma}{\sqrt{n}}\]$$ where the critical value $$\(z_{(1-\alpha/2)}\)$$ satisfies the criteria $$\[
-Pr(Z \leq z_{(1-\alpha/2)}) = (1-\alpha/2) \quad \text{for} \quad Z \sim \mathcal{N}(0,1).\]$$
-  
+Pr(Z \leq z_{(1-\alpha/2)}) = (1-\alpha/2) \]$$ for $$\[Z \sim \mathcal{N}(0,1)\]$$
+
 
 #### 1-sample t-test ($$\[{\sigma}\]$$ is unknown)
 
