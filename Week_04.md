@@ -60,7 +60,9 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
 
   <ins>Null and alternative hypotheses<ins/>:
      - The null hypothesis ($$\[H_0\]$$): a claim of "no difference in the population". ($$\[H_0: \mu = {\mu_0}\]$$)
-     - 
+     - The alternative hypothesis ($$\[H_a\]$$: a claim of "difference".
+       * One-sided alternatives ($$\[H_a:\mu > {\mu_0}\]$$, $$\[H_a:\mu < {\mu_0}\]$$)
+       * Two-sided alternatives ($$\[H_a:\mu \neq {\mu_0}\]$$)
   
   
 
