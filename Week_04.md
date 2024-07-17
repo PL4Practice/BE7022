@@ -48,7 +48,7 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
 - c) 2-sample： Two independent/separate groups; no matching or pairing; compare separate groups. (A single sample can be grouped by 2 levels of a variable and the resulting 2 groups will be considered as two independent samples.)
   > i.e. Compare vitamin content of bread immediately after baking versus other loaves that have been on shelf for 3 days
 
-  ### Hypothesis Testing
+### Hypothesis Testing
   *Hypothesis testing* is also called *significance testing*. The objective of hypothesis testing is to test claims about parameters.
 
   <ins>STEPS<ins/>:
@@ -76,8 +76,43 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
     $$\[\mathcal{Z_stat} = \frac{\bar{x} - {\mu_0}}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{N}(0,1)\]$$
 
   <ins>*p*-value<ins/>:
+  - The probability that test statistic is more extreme than the observed value, assuming $$\[H_0\]$$ is true.
+  - This corresponds to the area in the tail of the Z sampling distribution beyond the observed $$\[\mathcal{Z_stat}\]$$.
+  - Smaller *p*-values provide stronger evidence aganinst $$\[H_0\]$$.
+    * For two-sided $$\[H_a\]$$ --> consider "up" and "down" deviations
+      - Two-tailed test considers the possibility of relationship in both directions.
+      > double the one-sided *p*-value
+
+    * For one-sided $$\[H_a\]$$ --> use the area in the tail beyond the observed z statistic
+      - One-tailed test considers the possibility of relationship in one direction and completely disregards the possibility of a relationship in the other direction.
+      > hence, a one-tailed test is not common and used in specific situations only
+      > 
+      > i. For $$\[H_a: \mu < {\mu_o}\]$$, use area to left of observed $$\[\mathcal{Z_stat}$$
+      > 
+      > ii. For $$\[H_a: \mu > {\mu_o}\]$$, use area to right of observed $$\[\mathcal{Z_stat}$$
+      > 
+      > i.e. In testing this drug, you are only interested in testing if it less effective than the existing drug.  You do not care if it is significantly more effective.  You only wish to show that it is not less effective. In this scenario, a one-tailed test.
+---
+ 
+#### 1-sample z-test ($$\[{\sigma}\]$$ is known)
+**Test conditions**
+
+#### 1-sample t-test ($$\[{\sigma}\]$$ is unknown)
+
+#### Paired-sample z-test ($$\[{\sigma_d}\]$$ is known)
+
+#### Paired-sample t-test ($$\[{\sigma_d}\]$$ is unknown)
+
+#### 2-sample (independent/separate groups)
+#### 2-sample z-test ($$\[{\sigma_1}\]$$ and $$\[{\sigma_2}\]$$ are known and equal (=$$\[{\sigma_p}\]$$)
+#### 2-sample Student's t-test($$\[{\sigma_1}\]$$ and $$\[{\sigma_2}\]$$ are known and equal (=$$\[{\sigma_p}\]$$)
+ 
+ 
+ 
+
   
 
+    
     
   
 
