@@ -153,7 +153,23 @@ Each point in one sample is matched to a unique point in the other sample.
 
 #### 2-sample (independent/separate groups)
 
+Notations in 2 samples:
+
+Population parameters 
+| Size | Mean | SD |
+|---|---|---|
+| Group 1 | N1 | µ1 | σ1 |
+| Group 2	| N1 | µ2 | σ2 |
+
+Sample statistics
+| Size | Mean | SD |
+|---|---|---|
+| Group 1 |	n1 | x ̅_1 |	s1 | 
+| Group 2	| n2 | x ̅_2	| s2 |
+
 - Test conditions
+
+
 
 - Test procedure
 
