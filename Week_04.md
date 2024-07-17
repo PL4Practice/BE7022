@@ -35,7 +35,14 @@ Let x1, x2, … , xn denote a sample of n observations drawn from the population
   
 - sample standard deviation: $$\[s = \sqrt{s^2}\]$$
 
-When X is Normal or for a large sample (n >= 30) from any distribution, $$\[\bar{x} \sim \mathcal{N}(\mu, SE_\bar{x}\]$$
+When X is Normal or for a large sample (n >= 30) from any distribution, $$\[\bar{x} \sim \mathcal{N}(\mu, SE_\bar{x}\]$$, where, the standard deviation of $$\[\bar{x}\]$$ is:
+$$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
+
+
+<ins> Sample types for testing/inferences on means<ins/>
+a) 1-sample: One group; no concurrent control group, comparisons made to external population
+b) Paired-sampe: Two samples with each data point in one sample uniquely matched to a point in the other; 
+
 
 
   
