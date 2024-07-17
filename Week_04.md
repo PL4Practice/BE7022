@@ -120,17 +120,22 @@ Pr(Z \leq z_{(1-\alpha/2)}) = (1-\alpha/2) \]$$ for $$\[Z \sim \mathcal{N}(0,1)\
 - Test procedure
   * A. Formulate $$\[H_O: \mu = {\mu_0}\]$$ versus $$\( H_a: \mu \neq \mu_0 \)$$ ( <>)
   * B. Choose significance level α (ussually 0.05 or 0.01)
-  * C. Test statistic $$\[ \mathcal{t}_{\text{sat}} = \frac{\bar{x} - \mu_0}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{t_{n-1} \]$$
+  * C. Test statistic $$\[t_{\text{stat}} = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}} \sim t_{(n-1)}.\]$$
   * D. (Calculate *p*-value using R)
   * E. Reject $$\[H_O\]$$ if *p*-value < α
+    
 - Confidence interval
-  A (1-α)100% confidence interval for μ is calculated as $$\[
-\bar{x} \pm z_{(1-\alpha/2)} \frac{\sigma}{\sqrt{n}}\]$$ where the critical value $$\(z_{(1-\alpha/2)}\)$$ satisfies the criteria $$\[
-Pr(Z \leq z_{(1-\alpha/2)}) = (1-\alpha/2) \]$$ for $$\[Z \sim \mathcal{N}(0,1)\]$$
+
 
 #### Paired-sample z-test ($$\[{\sigma_d}\]$$ is known)
 
 - Test conditions
+  Each point in one sample is matched to a unique point in the other sample.
+  > Example: Pre- and post-intervention values, different time points
+  > 
+  > Xd,i = X1,i – X2,i
+
+
 
 - Test procedure
 
