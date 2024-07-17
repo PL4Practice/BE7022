@@ -51,16 +51,16 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
 ### Hypothesis Testing
   *Hypothesis testing* is also called *significance testing*. The objective of hypothesis testing is to test claims about parameters.
 
-  <ins>STEPS<ins/>:
-    - a. State null and alternative hypotheses and fig significance level. [NULL hypothesis: $$\[H_0\]$$, alternative hypotheses: $$[H_1\]$$
-    - b. Calculate test statistic (based on null hypothesis value forparameter.)
-    - c. Calculate *p*-value for the test statistic.
-    - d. Reject null hypothesis if *p*-value <= significance level. Retain null hypothesis if *p* value > significance level.
+<ins>STEPS<ins/>:
+- a. State null and alternative hypotheses and fig significance level. [NULL hypothesis: $$\[H_0\]$$, alternative hypotheses: $$[H_1\]$$
+- b. Calculate test statistic (based on null hypothesis value forparameter.)
+- c. Calculate *p*-value for the test statistic.
+- d. Reject null hypothesis if *p*-value <= significance level. Retain null hypothesis if *p* value > significance level.
   > While hypothesis testing is applicable to many parameters (involving different distributions and populations), this illustrative description focuses on testing the population mean µ using information from a single sample.
 
-  <ins>Null and alternative hypotheses<ins/>:
-     - The null hypothesis ($$\[H_0\]$$): a claim of "no difference in the population". ($$\[H_0: \mu = {\mu_0}\]$$)
-     - The alternative hypothesis ($$\[H_a\]$$: a claim of "difference".
+<ins>Null and alternative hypotheses<ins/>:
+- The null hypothesis ($$\[H_0\]$$): a claim of "no difference in the population". ($$\[H_0: \mu = {\mu_0}\]$$)
+- - The alternative hypothesis ($$\[H_a\]$$: a claim of "difference".
        * One-sided alternatives ($$\[H_a:\mu > {\mu_0}\]$$, $$\[H_a:\mu < {\mu_0}\]$$)
        * Two-sided alternatives ($$\[H_a:\mu \neq {\mu_0}\]$$)
 
@@ -92,19 +92,57 @@ $$\[\sigma_{\bar{X}} = SE_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\]$$
       > ii. For $$\[H_a: \mu > {\mu_o}\]$$, use area to right of observed $$\[\mathcal{Z_stat}$$
       > 
       > i.e. In testing this drug, you are only interested in testing if it less effective than the existing drug.  You do not care if it is significantly more effective.  You only wish to show that it is not less effective. In this scenario, a one-tailed test.
+
 ---
  
 #### 1-sample z-test ($$\[{\sigma}\]$$ is known)
-**Test conditions**
+
+- Test conditions
+  * Continuous variable X, simple random sample, σ is known
+  * X is approximately Normal (any *n*) or n >= 30 from any distribution
+- Test procedure
+  * A. Formulate $$\[H_O: \mu = {\mu_0}\]$$ versus $$\( H_a: \mu \neq \mu_0 \)$$ ( <>)
+  * B. Choose significance level α (ussually 0.05 or 0.01)
+  * C. Test statistic $$\[mathcal{Zsat} = \frac{{\bar{x}-{\mu_0}{\frac{\sigma}{\sqrt{n}} \sim \mathcal{N}(0,1)
+  * 
+
+- Confidence interval
+  
 
 #### 1-sample t-test ($$\[{\sigma}\]$$ is unknown)
 
+- Test conditions
+
+- Test procedure
+
+- Confidence interval
+
 #### Paired-sample z-test ($$\[{\sigma_d}\]$$ is known)
+
+- Test conditions
+
+- Test procedure
+
+- Confidence interval
 
 #### Paired-sample t-test ($$\[{\sigma_d}\]$$ is unknown)
 
+- Test conditions
+
+- Test procedure
+
+- Confidence interval
+
 #### 2-sample (independent/separate groups)
+
+- Test conditions
+
+- Test procedure
+
+- Confidence interval
+  
 #### 2-sample z-test ($$\[{\sigma_1}\]$$ and $$\[{\sigma_2}\]$$ are known and equal (=$$\[{\sigma_p}\]$$)
+
 #### 2-sample Student's t-test($$\[{\sigma_1}\]$$ and $$\[{\sigma_2}\]$$ are known and equal (=$$\[{\sigma_p}\]$$)
  
  
