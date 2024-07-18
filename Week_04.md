@@ -314,8 +314,75 @@ In the 1970s, 20–29 year old men in the U.S. had a mean body weight μ of 170 
 [1] "pvalue_greater = 0.2743"
 # Do not reject null hyothesis as the two-sided p-value = 0.5485 > alpha = 0.005. Insufficient evidence to conclude that current mean body weight is not equal 170. Mean body weight of 20–29 year old men in the U.S. has not changed since the 1970s. 
 ```
+### 1-sample t-test ($$\[{\sigma}\]$$ is unknown)
+The CLT states that the distribution of the sample mean will be approximately normal if the sample size is sufficiently large, typically 
+n≥30. However, for smaller sample sizes, normality can still be assumed if the population from which the sample is drawn is normally distributed.
 
- 
+Example:  
+We want to know whether mean birth weight of full-term infants who ultimately died of SIDS is significantly different from that of other full term births.  We know from prior research that the mean birth weight of the non-SIDs babies in a population is 3300 grams.  We also know that birth weight of SIDS babies is normally distributed.  We study n = 10 SIDS babies and determine their birth weights to be 2998, 3740,  2031, 2804, 2454, 2780, 2203, 3803, 3948 and 2144 grams.  Do these data provide significant evidence that SIDs babies have different birth weights than the rest of the population?  
+```
+SIDSweight = c(2998, 3740, 2031, 2804, 2454, 2780, 2203, 3803, 3948, 2144)
+alpha = 0.05
+x_bar = mean(SIDSweight)
+mu_0 = 3300
+n = length(SIDSWeight)
+# SIDS weight: X~N(mu = unknown, sigma = unknown)
+# X~N. Normality requirement of x_bar is satisfied
+# H0: mu = 3300 (the mean weight of non-SIDs babies) versus Ha:mu is not equal to 3300
+SIDSweight = c(2998, 3740, 2031, 2804, 2454, 2780, 2203, 3803, 3948, 2144)
+# 1-sample t-test from t.test() function
+
+t.test(x=SIDSweight, mu=mu_0, n=n, alternative='two.sided')
+
+One Sample t-test
+
+data:  SIDSweight
+t = -1.799, df = 9, p-value = 0.1056
+alternative hypothesis: true mean is not equal to 3300
+95 percent confidence interval:
+ 2375.584 3405.416
+sample estimates:
+mean of x 
+   2890.5
+# Do not reject null hypothesis as two-siede p-value = 0.1056 > alpha = 0.05. Insufficient evidence to conclude that the mean SIDS birth weight is no equal to 3300. The mean birth weights of SIDS and non-SIDS babies do not differ.
+# There is 95% probability that mean SIDS  birth weight lies in (2375.584, 3405.416). Note that the null hypothesis value of 3300 is contained inthe cinfidence interval.
+````
+---
+### Paired-sample z-test ($$\[{\sigma_d}\]$$ is unknown)
+
+Example:
+•	A study addresses whether oat bran reduce LDL cholesterol with a cross-over design.
+•	Subjects “cross-over” from a cornflake diet to an oat bran diet or vice-versa. 
+–	Half subjects start on CORNFLK, half on OATBRAN
+–	Two weeks on diet 1 
+–	Measures LDL cholesterol
+–	Washout period
+–	Switch diet
+–	Two weeks on diet 2
+–	Measures LDL cholesterol
+
+ID  CORNFLK OATBRAN
+ -------  ------- -------
+      1    4.61    3.84
+      2    6.42    5.57
+      3    5.40    5.85
+      4    4.54    4.80
+      5    3.98    3.68
+      6    3.82    2.96
+      7    5.01    4.41
+      8    4.34    3.72
+      9    3.80    3.49
+     10    4.56    3.84
+     11    5.35    5.26
+     12    3.89    3.73
+     13    2.25    1.84
+     14    4.24    4.14
+
+
+
+Assuming that LDL cholesterol levels are normally distributed, use data from the above trial involving a cross-over design to test whether oat bran cereal reduces LDL cholesterol.
+
+
 
   
 
