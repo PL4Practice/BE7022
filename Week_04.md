@@ -383,7 +383,27 @@ ID  CORNFLK OATBRAN
 Assuming that LDL cholesterol levels are normally distributed, use data from the above trial involving a cross-over design to test whether oat bran cereal reduces LDL cholesterol.
 
 
+```
+# Difference if paired values: Xd～N(mu=unknown, sigma=o.5)
+# Xd ~N, normality requirement of Xd_bar is satisfied
+# H0: mu_d = 0 versus Ha: mu_a >0
+Cornflk = c(4.61, 6.42, 5.40, 4.54, 3.98, 3.82, 5.01, 4.34, 3.80, 4.56, 5.35, 3.89, 2.25, 4.24)
+OatBran = c(3.84, 5.57, 5.85, 4.80, 3.68, 2.96, 4.41, 3.72, 3.49, 3.84, 5.26, 3.73, 1.84, 4.14)
 
+X_d =Cornflk - OatBran
+
+alpha = 0.05
+x_bar = mean(X_d)
+mu_0 = 0
+sigma = 0.5
+n = length(X_d)
+
+# call user-defined onesample.ztest() function
+
+onesample.ztest(x_bar=x_bar, mu_0=0, sigma=0.5, n=n)
+
+
+```
   
 
     
