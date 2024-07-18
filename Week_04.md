@@ -348,7 +348,7 @@ mean of x
 # There is 95% probability that mean SIDS  birth weight lies in (2375.584, 3405.416). Note that the null hypothesis value of 3300 is contained inthe cinfidence interval.
 ````
 ---
-### Paired-sample z-test ($$\[{\sigma_d}\]$$ is unknown)
+### Paired-sample z-test ($$\[{\sigma_d}\]$$ is known)
 
 Example:
 •	A study addresses whether oat bran reduce LDL cholesterol with a cross-over design.
@@ -402,15 +402,68 @@ n = length(X_d)
 
 onesample.ztest(x_bar=x_bar, mu_0=0, sigma=0.5, n=n)
 
+[[1]]
+[1] "one.z.stat = 2.7154"
 
+[[2]]
+[1] "pvalue_twosided = 0.0066"
+
+[[3]]
+[1] "pvalue_less = 0.9967"
+
+[[4]]
+[1] "pvalue_greater = 0.0033"
+
+# Reject the null hypothesis as one-sided p-value = 0.0033 < 0.05. Conclude that the mean Xd is > 0 . Conclude that bran cereal reduces LDL cholesterol.
 ```
   
+### Paired-sample z-test ($$\[{\sigma_d}\]$$ is unknown)
 
-    
-    
-  
+Example:
+Repeat above problem about cereal diet and LDL cholesterol but without the additional assumption that Xd,i ~ N (mu_d=unknown, sigma_d=0.5).
+
+Xd,I distribution is unknown. sigma_d is unknown.
+
+Cue: Shapiro-Wilk test
+```
+# Difference of paired values: Xd, mu=unknown, sigma=unknown
+# Distribution of Xd is unknown
+# Formally test normality of Xd using Shapiro-Wilk test for normality
+# Shapiro-Wilk H0: Normal vesus Shapiro-Wilk Ha: Non-normal
+
+Cornflk = c(4.61, 6.42, 5.40, 4.54, 3.98, 3.82, 5.01, 4.34, 3.80, 4.56, 5.35, 3.89, 2.25, 4.24)
+OatBran = c(3.84, 5.57, 5.85, 4.80, 3.68, 2.96, 4.41, 3.72, 3.49, 3.84, 5.26, 3.73, 1.84, 4.14)
+
+X_d =Cornflk - OatBran
+
+shapiro.test(X_d)
 
 
-    
-  
+	Shapiro-Wilk normality test
 
+data:  X_d
+W = 0.9365, p-value = 0.3753
+# As Shapiro-Wilk test’s p-value = 0.3753 > alpha = 0.05, do not reject Shapiro-Wilk test’s null hypothesis of Normality of Xd.
+
+# So, Normality requirement of Xd_bar is satisfied. Prpceed with the paired-sample t-test.
+> # So, Normality requirement of Xd_bar is satisfied. Prpceed with the paired-sample t-test.
+> # H0: u_d = 0 versus Ha: mu_d >0
+> alpha  = 0.05
+> mu_0   = 0
+> n      = length(X_d)
+> # 1-sample t-test from t.test() function.
+> # ?t.test
+> t.test(x=X_d, mu=mu_0, n=n, alternative='greater')
+One Sample t-test
+
+data:  X_d
+t = 3.3444, df = 13, p-value = 0.002639
+alternative hypothesis: true mean is greater than 0
+95 percent confidence interval:
+ 0.1707137       Inf
+sample estimates:
+mean of x 
+0.3628571
+
+# Reject the null hypothesis as one-sided p-value = 0.0026 < alpha = 0.05.  Conclude that the mean Xd is > 0.  Conclude that oat bran cereal reduces LDL cholesterol.
+# There is 95% probability that mean reduction in LDL cholesterol lies in (0.1707, Inf).  Note that the null hypothesis value of 0 is not contained in this interval. 
